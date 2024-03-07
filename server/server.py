@@ -1,10 +1,6 @@
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
-
-import requests
 import json
-from time import sleep
-import random
 import os
 from threading import Lock
 import urllib.parse
